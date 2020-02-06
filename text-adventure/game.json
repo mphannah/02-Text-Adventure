@@ -7,7 +7,8 @@
 				"exit": "EXIT1",
 				"target": "LOCATION2"
 			}
-		]
+		],
+		"items":[]
 	}
 	,"LOCATION2": {
 		"name": "",
