@@ -1,16 +1,87 @@
 {
-    "PAMPHLET": {
-       "exits": {},
+    "BADGE": {
+       "exits": {
+          "STAIR": "You remember your Badge. You take it out and gasp. What?! You have no idea what to think. You drop the badge in shock"
+       },
        "actions": {
-          "read": "The pamphlet says, Welcome to Zork!"
+          "READ": "The badge has your identification number on it: 0225",
+          "EXAMINE": "The badge has your identification number on it: 0225",
+          "CHECK": "The badge has your identification number on it: 0225",
+          "LOOK AT": "The badge has your identification number on it: 0225"
        },
        "points": 1
     },
-    "SWORD": {
+    "QUARTER": {
        "exits": {
-          "CELLA": "The sword glows with a faint blue glow!"
+          "LOUNGE": "You put the quarter in the vending machine. Nothing comes out. You never see that quarter again"
        },
-       "actions": {},
+       "actions": {
+         "READ": "You found a vintage quarter. The year displayed on the quarter is 2020",
+         "EXAMINE": "You found a vintage quarter. The year displayed on the quarter is 2020",
+         "CHECK": "You found a vintage quarter. The year displayed on the quarter is 2020",
+         "LOOK AT": "You found a vintage quarter. The year displayed on the quarter is 2020",
+         "FLIP": "Tails"
+       },
        "points": 10
-    }
+    },
+    "COFFEE": {
+      "exits": {
+         "OFFICE": "You decide to be a good person and place the cup of coffee on his desk. You figure it would make Gus happy, if Gus is ever returns here"
+      },
+      "actions": {
+         "READ": "The name on the coffee says Gus",
+         "EXAMINE": "Cream and sugar",
+         "CHECK": "Cream and sugar",
+         "LOOK AT": "Cream and sugar",
+         "DRINK": "Seriously, this isn't yours. I know you're a prisoner here, but come on"
+      },
+      "points": 1
+   },
+   "MACHINE": {
+      "exits": {},
+      "actions": {
+         "EXAMINE": "It looks broken, try taking a cookie",
+         "CHECK": "It looks broken, try taking a cookie",
+         "LOOK AT": "It looks broken, try taking a cookie"
+      },
+      "points": 100
+   },
+   "COOKIE": {
+      "exits": {},
+      "actions": {
+         "READ": "It says that someone believes in you",
+         "READ FORTUNE": "It says that someone believes in you"   
+      },
+      "points": 1
+   },
+   "DOOR": {
+      "exits": {},
+      "actions": {
+         "EXAMINE": "There's a huge door in front of you",
+         "CHECK": "There's a huge door in front of you",
+         "LOOK AT": "There's a huge door in front of you",
+         "OPEN": "You try, but fail"
+      },
+      "points": 100
+   },
+   "HANGER": {
+      "exits": {},
+      "actions": {
+         "EXAMINE": "There's a huge door in front of you",
+         "CHECK": "There's a huge door in front of you",
+         "LOOK AT": "There's a huge door in front of you",
+         "OPEN": "You try, but fail"
+      },
+      "points": 100
+   },
+   "GUS": {
+      "exits": {},
+      "actions": {
+         "EXAMINE": "It's Gus's desk",
+         "CHECK": "It's Gus's desk",
+         "LOOK AT": "It's Gus's desk, yay!",
+         "OPEN ": "You respect Gus and don't go through his desk"
+      },
+      "points": 100
+   }
  }

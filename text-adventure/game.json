@@ -1,23 +1,236 @@
 {
-	"START": {
-		"name": "",
-		"desc": "",
+	"PBLOC": {
+		"name": "Prison Block",
+		"desc": "You stand in the center of the ship's detention center",
 		"exits": [
 			{
-				"exit": "EXIT1",
-				"target": "LOCATION2"
+				"exit": "OPEN CELL",
+				"target": "CELL"
+			},{
+				"exit":"PRISON CAFETERIA",
+				"target": "PCAFE"
 			}
 		],
 		"items":[]
-	}
-	,"LOCATION2": {
-		"name": "",
-		"desc": "",
+	},
+	"CELL": {
+		"name": "Open Cell",
+		"desc": "Your old cell seems roomier than before",
 		"exits": [
 			{
-				"exit": "EXIT1",
-				"target": "START"
+				"exit": "PRISON BLOCK",
+				"target": "PBLOC"
+			}
+		],
+		"items":[
+			{
+				"item": "BADGE",
+				"desc": "Your old badge is lying on the ground",
+				"take": "You grab the badge"
+			}
+
+		]
+	},
+	"PCAFE": {
+		"name": "Prison Cafeteria",
+		"desc": "You reach the prison cafeteria. You can still taste lunch from today. You gag",
+		"exits": [
+			{
+				"exit": "PRISON BLOCK",
+				"target": "PBLOC"
+			},{
+				"exit": "RESTROOM",
+				"target": "TOILET"
+			},{
+				"exit": "KITCHEN",
+				"target": "KITCHEN"
+			},{
+				"exit": "LOUNGE",
+				"target": "LOUNGE"
+			}
+		],
+		"items":[]
+	},
+	"TOILET": {
+		"name": "Restroom",
+		"desc": "You gag again",
+		"exits": [
+			{
+				"exit": "PRISON CAFETERIA",
+				"target": "PCAFE"
+			}
+		],
+		"items":[
+			{
+				"item": "QUARTER",
+				"desc": "Must be your lucky day! You see a quarter in the toilet",
+				"take": "You regretfully take the quarter"
 			}
 		]
-	}
+	},
+	"KITCHEN": {
+		"name": "Kitchen",
+		"desc": "You enter the kitchen. It smells half-good in here",
+		"exits": [
+			{
+				"exit": "PRISON CAFETERIA",
+				"target": "PCAFE"
+			},{
+				"exit": "CAFETERIA",
+				"target": "CAFE"
+			}
+
+		],
+		"items":[]
+	},
+	"CAFE": {
+		"name": "Cafeteria",
+		"desc": "You reach the cafeteria. This is where the non-criminals eat",
+		"exits": [
+			{
+				"exit": "KITCHEN",
+				"target": "KITCHEN"
+			}
+		],
+		"items":[
+			{
+				"item": "COFFEE",
+				"desc": "A cup of coffee is sitting on a far off table",
+				"take": "You take the cup. The name on the cup says Gus"
+			}
+		]
+	},
+	"LOUNGE": {
+		"name": "Lounge",
+		"desc": "You enter the lounge. There's a reception desk and a couple couches. Through the doorway you can see some offices",
+		"exits": [
+			{
+				"exit": "OFFICES",
+				"target": "OFFICE"
+			},{
+				"exit": "PRISON CAFETERIA",
+				"target": "PCAFE"
+			}
+		],
+		"items":[
+			{
+				"item": "MACHINE",
+				"desc": "You see a vending machine, which seems to be broken, dispensing fortune cookies"
+			},
+			{
+				"item": "COOKIE",
+				"desc": "",
+				"take": "The machine must have been broken, it gives you the cookie for free"
+			}
+		]
+	},
+	"OFFICE": {
+		"name": "Offices",
+		"desc": "You enter the office. It looks like any other American office",
+		"exits": [
+			{
+				"exit": "LOUNGE",
+				"target": "LOUNGE"
+			},{
+				"exit": "INTELLIGENCE OFFICES",
+				"target": "INTEL"
+			}
+		],
+		"items":[
+			{
+				"item": "DOOR",
+				"desc": "You can see the hanger door, the way out, but it seems like there's no way to open it"
+			},{
+				"item": "HANGER",
+				"desc": "You try to open the door, but it won't budge"
+			},{
+				"item": "GUS",
+				"desc": "You see a desk with the nametag Gus"
+			}
+		]
+	},
+	"INTEL": {
+		"name": "Intelligence Office",
+		"desc": "There are computers all around you with programs open that make no sense to you. In the middle of the North wall there is a giant monitor that has the number sequence 0225 on it",
+		"exits": [
+			{
+				"exit": "OFFICES",
+				"target": "OFFICE"
+			},{
+				"exit": "STAIRS",
+				"target": "STAIR"
+			}
+		],
+		"items":[]
+	},
+	"STAIR": {
+		"name": "Control Room",
+		"desc": "Within the intelligence bay, you walk up the stairs to the control room. There you see many keyboards and number pads, you notice that on the main monitor there is a location to type in a password to unlock the hanger door. You remember the numbers from the previous exit, 0225, and type it in. You hear a rumble throughout the facility",
+		"exits": [
+			{
+				"exit": "INTELLIGENCE OFFICES",
+				"target": "INTEL2"
+			}
+		],
+		"items":[]
+	},
+	"STAIR2": {
+		"name": "Control Room",
+		"desc": "Within the intelligence bay, you walk up the stairs to the control room. There you see many keyboards and number pads",
+		"exits": [
+			{
+				"exit": "INTELLIGENCE OFFICES",
+				"target": "INTEL2"
+			}
+		],
+		"items":[]
+	},
+	"INTEL2": {
+		"name": "Intelligence Offices",
+		"desc": "You walk down the stairs. There are computers all around you with programs open that make no sense to you. The center monitor reads open",
+		"exits": [
+			{
+				"exit": "STAIRS",
+				"target": "STAIR2"
+			},{
+				"exit": "OFFICES",
+				"target": "OFFICE2"
+			}
+		],
+		"items":[]
+	},
+	"OFFICE2": {
+		"name": "Offices",
+		"desc": "The first thing you notice as you enter is that the hanger door is wide open now. You then notice that all other exits are sealed",
+		"exits": [
+			{
+				"exit": "INTELLIGENCES OFFICES",
+				"target": "INTEL2"
+			},{
+				"exit": "HANGER",
+				"target": "HANGER"
+			}
+		],
+		"items":[]
+	},
+	"HANGER": {
+		"name": "Hanger",
+		"desc": "You can see one ship left in the hanger. You then realise that you see foreign spacecraft outside the facility through the windows",
+		"exits": [
+			{
+				"exit": "OFFICES",
+				"target": "OFFICE2"
+			},{
+				"exit": "SHIP",
+				"target": "SHIP"
+			}
+		],
+		"items":[]
+	},
+	"SHIP": {
+		"name": "Ship",
+		"desc": "You enter the ship. The keys are right in the glove compartment (how convenient). As you clumsily fly out of the hanger and reach Earth. You learn that aliens have declared war on the human race. To the human's surprise the aliens were defeated before they even entered our atmosphere. The aliens were defeated by one ship flying back from the deserted spacestation in sector 5. Lucky for you, These aliens were not equipt to take over another inteligent race, but to your credit you were still pretty cool. After you returned to Earth everyone celebrated your bravery, you even got to meet The Govenor of Rhode Island, your home state. He gave you a ribbon and made sure that your full prison sentence was to be eliminated, even though there was only a few weeks left. In the end, you got you job at the post office back and retired at 65.",
+		"exits": [],
+		"items":[]
+	}				
 }

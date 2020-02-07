@@ -1,3 +1,10 @@
+name = input("What is your name: ")
+name = name.strip()
+if name == "":
+    name = "Paul"
+print("\nIt's 2053. You are " + name + ", a former US mail carrier. You are currently a prisoner on board an American spacestation for snooping through government secrets that were sent through the mail. As you wake up in your cell from your daily nap, you notice that no one is in the facility. More importantly, every cell door is open! You cautiously walk out.")
+print("You should look around to see why everyone is gone and why.")
+
 #!/usr/bin/env python3
 import sys, os, json
 # Check to make sure we are running the correct version of Python
@@ -43,20 +50,22 @@ def render(game,items,current):
         if i in items:
             if current in items[i]["exits"]:
                 print(items[i]["exits"][current])
+                inventory.remove(i)
+
 
     #print available exits
-    print("Available exits:")
+    print("\nAvailable exits:")
     for e in c["exits"]:
-        print(e["exits"].lower())
+        print(e["exit"].lower())
 
 def get_input():
-    response = input("What do you want to do? ")
+    response = input("\nWhat do you want to do? ")
     response = response.upper().strip()
     return response
 
 def update(game,items,current,response):
     if response == "INVENTORY":
-        print("You are carrying:")
+        print("\nYou are carrying:")
         if len(inventory) == 0:
             print("Nothing")
             return current
@@ -72,6 +81,12 @@ def update(game,items,current,response):
 
     for item in c["items"]:
         if response == "GET " + item["item"] and not check_inventory(item["item"]):
+            print()
+            print(item["take"])
+            inventory.append(item["item"])
+            return current
+        elif response == "TAKE " + item["item"] and not check_inventory(item["item"]):
+            print()
             print(item["take"])
             inventory.append(item["item"])
             return current
@@ -80,7 +95,9 @@ def update(game,items,current,response):
         if i in items:
             for action in items[i]["actions"]:
                 if response == action + " " + i:
+                    print()
                     print(items[i]["actions"][action])
+                    return current
 
     if response[0:3] == "GET":
         print("You can't take that!")
@@ -94,8 +111,8 @@ def update(game,items,current,response):
 
 # The main function for the game
 def main():
-    current = 'START'  # The starting location
-    end_game = ['END']  # Any of the end-game locations
+    current = 'PBLOC'  # The starting location
+    end_game = ['SHIP']  # Any of the end-game locations
 
     (game,items) = load_files()
 
